@@ -12,7 +12,7 @@ void readFileTest3() {
         Method method = testClass.getDeclaredMethod("readFile", cArg);
   // Enter code here
   try {
-    assertEquals("Hello\nWorld", (String)method.invoke(null, "file2.txt"));
+    assertEquals("Hello\nWorld\n", (String)method.invoke(null, "file2.txt"));
     
   } catch (Exception e) {
     fail(e.getMessage());  // Noncompliant
@@ -36,7 +36,7 @@ void backwardsReadFileTest1() {
         Method method = testClass.getDeclaredMethod("backwardsReadFile", cArg);
   // Enter code here
   try {
-    assertEquals("dlroW olleH", (String)method.invoke(null, "file.txt"));
+    assertEquals("\ndlroW olleH", (String)method.invoke(null, "file.txt"));
     
   } catch (Exception e) {
     fail(e.getMessage());  // Noncompliant
@@ -60,7 +60,7 @@ void backwardsReadFileTest2() {
         Method method = testClass.getDeclaredMethod("backwardsReadFile", cArg);
   // Enter code here
   try {
-      assertEquals("654321", (String)method.invoke(null, "file1.txt"));
+      assertEquals("\n654321", (String)method.invoke(null, "file1.txt"));
     
   } catch (Exception e) {
     fail(e.getMessage());  // Noncompliant
@@ -84,7 +84,7 @@ void backwardsReadFileTest3() {
         Method method = testClass.getDeclaredMethod("backwardsReadFile", cArg);
   // Enter code here
   try {
-      assertEquals("dlroW\nolleH", (String)method.invoke(null, "file2.txt"));
+      assertEquals("\ndlroW\nolleH", (String)method.invoke(null, "file2.txt"));
   } catch (Exception e) {
     fail(e.getMessage());  // Noncompliant
   }
@@ -108,7 +108,7 @@ void readFileTest2() {
   // Enter code here
   try {
     
-    assertEquals("123456", (String)method.invoke(null, "file1.txt"));
+    assertEquals("123456\n", (String)method.invoke(null, "file1.txt"));
   } catch (Exception e) {
     fail(e.getMessage());  // Noncompliant
   }
@@ -132,7 +132,7 @@ void readFileTest1() {
   // Enter code here
   try {
     
-    assertEquals("Hello World", (String)method.invoke(null, "file.txt"));
+    assertEquals("Hello World\n", (String)method.invoke(null, "file.txt"));
   } catch (Exception e) {
     fail(e.getMessage());  // Noncompliant
   }
